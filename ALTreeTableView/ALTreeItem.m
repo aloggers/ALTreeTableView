@@ -1,26 +1,21 @@
-//
-// Created by zaplitny on 9/1/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
 #import "ALTreeItem.h"
-
+#import "ALTreeItemInfo.h"
 
 @implementation ALTreeItem {
 @private
     NSObject* _data;
-    BOOL _expanded;
-    NSArray* _children;
-    NSUInteger _level;
-    __weak NSObject* _parent;
+    ALTreeItemInfo* _info;
+}
+@synthesize data = _data;
+@synthesize info = _info;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        _info = [[ALTreeItemInfo alloc] init];
+    }
+    return self;
 }
 
-@synthesize data = _data;
-@synthesize expanded = _expanded;
-@synthesize children = _children;
-@synthesize level = _level;
-@synthesize parent = _parent;
 
 @end
